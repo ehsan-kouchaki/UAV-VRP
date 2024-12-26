@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    The main HTML structure for a Google Maps-based web page.
+    
+    This page includes:
+    - A Google Map to display markers and routes.
+    - A sidebar with buttons to interact with the map.
+    
+    Features:
+    - Responsive design with a map occupying most of the screen and a sidebar for controls.
+    - Styled buttons for user interactions.
+    
+    Author:
+    - Ehsan Kouchaki
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps with Markers</title>
+    <style>
+        /* 
+        Page-wide styling for layout and components.
+        */
+        body {
+            display: flex; /* Use flexbox for layout */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        #map {
+            height: 100vh; /* Full viewport height */
+            width: 75%; /* Occupy 75% of the screen width */
+        }
+
+        #sidebar {
+            width: 25%; /* Occupy 25% of the screen width */
+            padding: 10px; /* Add padding around the content */
+            background-color: #f4f4f4; /* Light gray background for better visibility */
+        }
+
+        button {
+            padding: 10px 20px; /* Add padding for larger clickable area */
+            font-size: 16px; /* Set font size for readability */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            margin-bottom: 10px; /* Add space between buttons */
+            width: 100%; /* Make buttons stretch across the sidebar width */
+        }
+    </style>
+</head>
+<body>
+    <!--
+    Main layout:
+    - A Google Map occupies the left section.
+    - A sidebar on the right contains buttons for user interaction.
+    -->
+    <div id="map"></div> <!-- The Google Maps container -->
+    
+    <div id="sidebar">
+        <!-- Button to add markers to the map -->
+        <button id="add-markers">Add Markers</button>
+        
+        <!-- Button to draw routes or lines on the map -->
+        <button id="draw-lines">Draw Lines</button>
+    </div>
+    
+    <!-- Load the Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}"></script>
+    
+    <!-- Include the main JavaScript file for map interactions -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
